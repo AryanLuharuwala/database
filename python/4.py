@@ -55,11 +55,14 @@ def create_datapoint(field_names):
 
 # Usage:
 field_names = ["name", "age", "city"]
-datapoint = create_datapoint(field_names)
+y=int(input(f"Number of entries wanted"))
 db=Database()
-db.add_datapoint(datapoint)
+for x in range(y):
+     datapoint = create_datapoint(field_names)
+     db.add_datapoint(datapoint)
 #db.link_entities(datapoint1.id, datapoint2.id, "friends")
 
 search_criteria = {"city": "Los Angeles"}
 result = db.search_datapoint(search_criteria)
 print(result.data)
+
